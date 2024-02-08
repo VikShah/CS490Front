@@ -1,0 +1,35 @@
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    position:absolute;
+    left:0;
+    top: 70px;
+    
+  }
+  
+  .search-bar {
+    margin-bottom: 10px;
+    
+  }
+  
+  .search-results {
+    display: flex;
+    justify-content: space-between;
+    position:absolute;
+    left:0;
+    top: 110px;
+    
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    
+    
+  }
+  
+  li {
+    margin-bottom: 20px;
+    
+  }
+  
