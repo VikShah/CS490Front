@@ -10,6 +10,8 @@ function Films() {
   const [actorSearchResults, setActorSearchResults] = useState([]);
   const [genreSearchResults, setGenreSearchResults] = useState([]);
   const [expandedFilmId, setExpandedFilmId] = useState(null);
+  const [customerId, setCustomerId] = useState('');
+  const [rentSuccess, setRentSuccess] = useState(null);
 
   const handleFilmSearch = () => {
     // Construct the URL with query parameters for searching films by film name
@@ -82,6 +84,15 @@ function Films() {
     setExpandedFilmId(filmId);
   };
 
+  const handleRentFilm = (filmId) => {
+    // Simulating customer ID validation (checking if it's not empty)
+    if (customerId.trim() !== '') {
+      setRentSuccess(true); // Set rent success to true
+    } else {
+      setRentSuccess(false); // Set rent success to false if customerId is invalid
+    }
+  };
+
   return (
     <div className="container">
       <Header />
@@ -135,6 +146,18 @@ function Films() {
                     <strong>Category:</strong> {film.category_name}
                     <br />
                     <strong>Release Year:</strong> {film.release_year}
+                    <br />
+                    {/* Input field for entering customer ID */}
+                    <input
+                      type="text"
+                      value={customerId}
+                      onChange={e => setCustomerId(e.target.value)}
+                      placeholder="Enter customer ID"
+                    />
+                    <button onClick={() => handleRentFilm(film.film_id)}>Rent Film</button>
+                    {/* Display rent success or failure message */}
+                    {rentSuccess === true && <span>Rent successful</span>}
+                    {rentSuccess === false && <span>Rent failed</span>}
                   </>
                 )}
               </li>
@@ -155,6 +178,18 @@ function Films() {
                     <strong>Category:</strong> {film.category_name}
                     <br />
                     <strong>Release Year:</strong> {film.release_year}
+                    <br />
+                    {/* Input field for entering customer ID */}
+                    <input
+                      type="text"
+                      value={customerId}
+                      onChange={e => setCustomerId(e.target.value)}
+                      placeholder="Enter customer ID"
+                    />
+                    <button onClick={() => handleRentFilm(film.film_id)}>Rent Film</button>
+                    {/* Display rent success or failure message */}
+                    {rentSuccess === true && <span>Rent successful</span>}
+                    {rentSuccess === false && <span>Rent failed</span>}
                   </>
                 )}
               </li>
@@ -175,6 +210,18 @@ function Films() {
                     <strong>Category:</strong> {film.category_name}
                     <br />
                     <strong>Release Year:</strong> {film.release_year}
+                    <br />
+                    {/* Input field for entering customer ID */}
+                    <input
+                      type="text"
+                      value={customerId}
+                      onChange={e => setCustomerId(e.target.value)}
+                      placeholder="Enter customer ID"
+                    />
+                    <button onClick={() => handleRentFilm(film.film_id)}>Rent Film</button>
+                    {/* Display rent success or failure message */}
+                    {rentSuccess === true && <span>Rent successful</span>}
+                    {rentSuccess === false && <span>Rent failed</span>}
                   </>
                 )}
               </li>
